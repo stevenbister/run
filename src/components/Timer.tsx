@@ -1,18 +1,41 @@
-import { ComponentPropsWithoutRef, useState } from 'react';
+import { ComponentPropsWithoutRef, useEffect, useState } from 'react';
 import { useInterval } from '../hooks/useInterval';
-import { ClockStatus } from '../types';
+import { TimerStatus } from '../types';
 
-export interface ClockProps extends ComponentPropsWithoutRef<'div'> {
-    status?: ClockStatus;
+export interface TimerProps extends ComponentPropsWithoutRef<'div'> {
+    /**
+     * The status of the timer
+     */
+    status?: TimerStatus;
+    /**
+     * The max duration of the timer in seconds
+     */
+    maxDuration?: number;
+    /**
+     * Callback function to be called when the timer ends
+     */
+    onTimerEnd?: () => void;
 }
 
-export function Clock(props: ClockProps) {
-    const { status = 'idle', ...rest } = props;
+export function Timer(props: TimerProps) {
+    const {
+        status = 'idle',
+        maxDuration,
+        onTimerEnd = () => {},
+        ...rest
+    } = props;
     const [timeElapsed, setTimeElapsed] = useState(0);
 
     const seconds = Math.floor(timeElapsed % 60);
     const minutes = Math.floor((timeElapsed / 60) % 60);
     const hours = Math.floor((timeElapsed / 60 / 60) % 24);
+
+    useEffect(() => {
+        if (maxDuration === timeElapsed) {
+            setTimeElapsed(0);
+            onTimerEnd();
+        }
+    }, [maxDuration, onTimerEnd, timeElapsed]);
 
     useInterval(
         () => {

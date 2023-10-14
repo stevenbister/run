@@ -1,1 +1,1 @@
-export type ClockStatus = 'idle' | 'ticking';
+export type TimerStatus = 'idle' | 'ticking';
