@@ -16,4 +16,12 @@ module.exports = {
             { allowConstantExport: true },
         ],
     },
+    overrides: [
+        {
+            files: './src/routes/**/*',
+            rules: {
+                'react-refresh/only-export-components': ['off'],
+            },
+        },
+    ],
 };
