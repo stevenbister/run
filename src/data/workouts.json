@@ -1,0 +1,300 @@
+[
+    {
+        "id": 1,
+        "name": "8 X 1-min intervals",
+        "intervals": [
+            {
+                "effort": "walk",
+                "duration": 180
+            },
+            {
+                "effort": "easy",
+                "duration": 600
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 300
+            },
+            {
+                "effort": "walk",
+                "duration": 180
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "6 x 2-min intervals",
+        "intervals": [
+            {
+                "effort": "walk",
+                "duration": 180
+            },
+            {
+                "effort": "easy",
+                "duration": 600
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 300
+            },
+            {
+                "effort": "walk",
+                "duration": 180
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "1-2-3 intervals",
+        "intervals": [
+            {
+                "effort": "walk",
+                "duration": 180
+            },
+            {
+                "effort": "easy",
+                "duration": 600
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 180
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 120
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 180
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 120
+            },
+            {
+                "effort": "hard",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 120
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 60
+            },
+            {
+                "effort": "hard",
+                "duration": 180
+            },
+            {
+                "effort": "walk",
+                "duration": 60
+            },
+            {
+                "effort": "easy",
+                "duration": 120
+            },
+            {
+                "effort": "easy",
+                "duration": 300
+            },
+            {
+                "effort": "walk",
+                "duration": 180
+            }
+        ]
+    }
+]
