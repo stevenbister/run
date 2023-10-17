@@ -7,13 +7,18 @@ export default function Index() {
             <nav>
                 {WORKOUT_DATA.length ? (
                     <ul>
-                        {WORKOUT_DATA.map((workout) => (
-                            <li key={workout.id}>
-                                <Link to={`/workouts/${workout.id}`}>
-                                    {workout.name}
-                                </Link>
-                            </li>
-                        ))}
+                        {WORKOUT_DATA.map((workout) => {
+                            if (import.meta.env.PROD && workout.id === 0)
+                                return null;
+
+                            return (
+                                <li key={workout.id}>
+                                    <Link to={`/workouts/${workout.id}`}>
+                                        {workout.name}
+                                    </Link>
+                                </li>
+                            );
+                        })}
                     </ul>
                 ) : (
                     <p>No workouts found.</p>
