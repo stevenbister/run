@@ -1,11 +1,20 @@
-import { useState } from 'react';
-import { LoaderFunctionArgs, json } from 'react-router-dom';
-import notification from '../assets/soft-tone-001-9755.mp3';
-import { Timer } from '../components/Timer';
+import { LoaderFunctionArgs, json, useLoaderData } from 'react-router-dom';
+import { Workout } from '../components/Workout';
 import WORKOUT_DATA from '../data/workouts.json';
-import { TimerStatus } from '../types';
+import type { Workout as WorkoutType } from '../types';
+
+type LoaderData = {
+    workout: WorkoutType | undefined;
+};
 
 export async function loader({ params }: LoaderFunctionArgs) {
+    if (params.id === undefined) {
+        throw new Response('', {
+            status: 400,
+            statusText: 'Bad Request',
+        });
+    }
+
     const workoutExists = WORKOUT_DATA.map((workout) => workout.id).includes(
         Number(params.id)
     );
@@ -17,41 +26,23 @@ export async function loader({ params }: LoaderFunctionArgs) {
         });
     }
 
-    return json({});
+    const workout = WORKOUT_DATA.find(
+        (workout) => workout.id === Number(params.id)
+    );
+
+    return json<LoaderData>({ workout });
 }
 
 export default function Workouts() {
-    // TODO: Abstract all of this stuff away into a component
-    const [status, setStatus] = useState<TimerStatus>('idle');
-    const [currentTimerIndex, setCurrentTimerIndex] = useState(0);
-    // TODO: Sample / testing data - will come from a data file later
-    const timers = [3, 5];
-    const audioElement = new Audio(notification);
+    const { workout } = useLoaderData() as LoaderData;
 
-    // When the timer ends, move to the next timer
-    function handleTimerEnd() {
-        if (currentTimerIndex < timers.length - 1) {
-            setCurrentTimerIndex(currentTimerIndex + 1);
-            audioElement.play();
-        } else {
-            // All timers have ended
-            setStatus('idle');
-            // Reset the current timer index
-            setCurrentTimerIndex(0);
-            audioElement.play();
-        }
-    }
+    if (!workout) return <p>No workout returned from loader</p>;
 
     return (
-        <>
-            <Timer
-                status={status}
-                maxDuration={timers[currentTimerIndex]}
-                onTimerEnd={handleTimerEnd}
-            />
+        <section>
+            <h1>{workout?.name}</h1>
 
-            <button onClick={() => setStatus('ticking')}>start</button>
-            <button onClick={() => setStatus('idle')}>stop</button>
-        </>
+            <Workout workout={workout} />
+        </section>
     );
 }
