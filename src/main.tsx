@@ -5,6 +5,7 @@ import RouteError from './RouteError';
 import Index from './routes/_index';
 import Root from './routes/root';
 import Workouts, { loader as workoutLoader } from './routes/workouts';
+import './styles/main.css';
 
 const router = createBrowserRouter([
     {
