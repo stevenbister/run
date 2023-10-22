@@ -46,3 +46,30 @@
 :where(h1, h2, h3, h4, h5, h6) {
     font-family: var(--font-heading);
 }
+
+/* ------------------
+    Components
+------------------ */
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-inline: var(--size-5);
+}
+
+.header__title {
+    font-size: var(--font-size-5);
+
+    /* font-weight: var(--font-weight-5); */
+    grid-column: 2 / 3;
+    text-align: center;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb__icon {
+    width: var(--size-5);
+    height: var(--size-5);
+}
