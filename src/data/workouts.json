@@ -2,6 +2,7 @@
     {
         "id": 0,
         "name": "test",
+        "sprite": "test",
         "intervals": [
             {
                 "effort": "walk",
@@ -32,6 +33,7 @@
     {
         "id": 1,
         "name": "8 X 1-min intervals",
+        "sprite": "8-1-min",
         "intervals": [
             {
                 "effort": "walk",
@@ -118,6 +120,7 @@
     {
         "id": 2,
         "name": "6 x 2-min intervals",
+        "sprite": "6-2-min",
         "intervals": [
             {
                 "effort": "walk",
@@ -212,6 +215,7 @@
     {
         "id": 3,
         "name": "1-2-3 intervals",
+        "sprite": "1-2-3-min",
         "intervals": [
             {
                 "effort": "walk",
