@@ -4,7 +4,7 @@ import { classNames as cx } from '../utils';
 
 interface BreadcrumbProps extends ComponentPropsWithoutRef<typeof Link> {}
 
-export const Breadcrumb = (props: BreadcrumbProps) => {
+export function Breadcrumb(props: BreadcrumbProps) {
     const { className, ...rest } = props;
 
     return (
@@ -26,4 +26,4 @@ export const Breadcrumb = (props: BreadcrumbProps) => {
             </svg>
         </NavLink>
     );
-};
+}
