@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import notification from '../assets/soft-tone-001-9755.mp3';
+import notification from '../assets/sounds/soft-tone-001-9755.mp3';
 import { Timer } from '../components/Timer';
 import type { TimerStatus, Workout as WorkoutType } from '../types';
 
