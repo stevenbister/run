@@ -15,15 +15,16 @@ interface IconProps extends ComponentPropsWithoutRef<'svg'> {
 
 export function Icon(props: IconProps) {
     const { className, id, ...rest } = props;
-    // const size = 30;
+    const width = 81;
+    const height = 100;
     const { spriteSheetPath } = useSpritesheetContext();
 
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            // width={width}
-            // height={height}
-            // viewBox={`0 0 ${width} ${height}`}
+            width={width}
+            height={height}
+            viewBox={`0 0 ${width} ${height}`}
             fill="none"
             className={cx('icon', className)}
             {...rest}

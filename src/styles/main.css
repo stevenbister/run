@@ -37,6 +37,8 @@
     --font-secondary: 'Chillax', var(--font-sans);
     --font-heading: var(--font-secondary);
     --font-body: var(--font-primary);
+    --container-width: 500px;
+    --color-primary: var(--orange-7);
 }
 
 :where(body) {
@@ -45,6 +47,41 @@
 
 :where(h1, h2, h3, h4, h5, h6) {
     font-family: var(--font-heading);
+}
+
+:where(ul, ol),
+:where(li) {
+    padding: 0;
+    list-style: none;
+}
+
+:where(a) {
+    color: var(--text-1);
+}
+
+:where(a:hover) {
+    text-decoration: none;
+}
+
+/* ------------------
+    Objects
+------------------ */
+.container {
+    width: min(var(--container-width), 100%);
+    margin-inline: auto;
+    padding-inline: var(--size-7);
+}
+
+.page {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+
+    > :last-child {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+    }
 }
 
 /* ------------------
@@ -72,4 +109,38 @@
 .breadcrumb__icon {
     width: var(--size-5);
     height: var(--size-5);
+}
+
+.card {
+    display: grid;
+    padding: var(--size-5);
+    border: var(--border-size-2) solid var(--text-1);
+    border-radius: var(--radius-2);
+    place-items: center;
+}
+
+.card__grid {
+    display: grid;
+    padding: var(--size-5);
+    grid-gap: var(--size-5);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ------------------
+    Utilities
+------------------ */
+.justify-center {
+    justify-content: center;
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border-width: 0;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
 }
