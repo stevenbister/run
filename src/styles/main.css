@@ -8,4 +8,41 @@
  open-props normalize isn't required, but makes for a nice base.
  normalize includes light and dark vars for adaptive theming
  */
-@import 'open-props/normalize';
+@import url('open-props/normalize');
+
+@font-face {
+    font-display: swap;
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 200 800;
+    src:
+        url('../assets/fonts/Manrope/Manrope-Variable.woff2') format('woff2'),
+        url('../assets/fonts/Manrope/Manrope-Variable.woff') format('woff'),
+        url('../assets/fonts/Manrope/Manrope-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Chillax;
+    font-style: normal;
+    font-weight: 200 700;
+    src:
+        url('../assets/fonts/Chillax/Chillax-Variable.woff2') format('woff2'),
+        url('../assets/fonts/Chillax/Chillax-Variable.woff') format('woff'),
+        url('../assets/fonts/Chillax/Chillax-Variable.ttf') format('truetype');
+}
+
+:root {
+    --font-primary: 'Manrope', var(--font-sans);
+    --font-secondary: 'Chillax', var(--font-sans);
+    --font-heading: var(--font-secondary);
+    --font-body: var(--font-primary);
+}
+
+:where(body) {
+    font-family: var(--font-body);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    font-family: var(--font-heading);
+}
