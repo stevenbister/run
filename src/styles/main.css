@@ -82,6 +82,7 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -127,6 +128,52 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.section {
+    padding-block: var(--size-5);
+}
+
+.section__ttl {
+    font-size: var(--font-size-5);
+    text-align: center;
+}
+
+.effort-section {
+    text-align: center;
+}
+
+.effort-section__ttl {
+    font-size: var(--font-size-4);
+}
+
+.effort-section__sub-ttl {
+    font-size: var(--font-size-6);
+}
+
+.btn {
+    display: grid;
+    padding: var(--size-2) var(--size-8);
+    border-radius: var(--radius-2);
+    background-color: var(--surface-4);
+    color: var(--text-1);
+    font-size: var(--size-4);
+    font-weight: 500;
+    place-items: center;
+}
+
+.btn-group {
+    display: flex;
+    gap: var(--size-4);
+}
+
+.btn-group--horizontal {
+    flex-direction: row;
+}
+
+.btn-group--vertical {
+    flex-direction: column;
+    align-items: center;
+}
+
 .play-pause-btn {
     display: grid;
     width: 100px;
@@ -140,6 +187,11 @@
 .play-pause-btn__icon {
     width: var(--size-8);
     height: var(--size-8);
+}
+
+.play-pause-btn__icon--play {
+    /* Nudge the play icon over slightly to better visually align it in the middle */
+    margin-inline-start: var(--size-2);
 }
 
 /* ------------------

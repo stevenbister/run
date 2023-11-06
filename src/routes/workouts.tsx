@@ -39,8 +39,8 @@ export default function Workouts() {
     if (!workout) return <p>No workout returned from loader</p>;
 
     return (
-        <section>
-            <h1>{workout?.name}</h1>
+        <section className="section">
+            <h1 className="section__ttl">{workout?.name}</h1>
 
             <Workout workout={workout} />
         </section>
