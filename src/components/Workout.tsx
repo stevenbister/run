@@ -2,6 +2,7 @@ import { useState } from 'react';
 import notification from '../assets/sounds/soft-tone-001-9755.mp3';
 import { Timer } from '../components/Timer';
 import type { TimerStatus, Workout as WorkoutType } from '../types';
+import { PlayPauseButton } from './PlayPauseButton';
 
 export interface WorkoutProps {
     workout: WorkoutType | undefined;
@@ -37,26 +38,40 @@ export function Workout(props: WorkoutProps) {
 
     return (
         <>
-            {intervals.map((interval, i) => (
-                <div key={i}>
-                    <span
-                        style={{
-                            color: currentTimerIndex === i ? 'red' : 'black',
-                        }}
-                    >
-                        {interval.effort}
-                    </span>
-                </div>
-            ))}
-
             <Timer
                 status={status}
                 maxDuration={intervals[currentTimerIndex].duration}
                 onTimerEnd={handleTimerEnd}
             />
 
-            <button onClick={() => setStatus('ticking')}>start</button>
-            <button onClick={() => setStatus('idle')}>stop</button>
+            <div>{intervals[currentTimerIndex].effort}</div>
+
+            <PlayPauseButton
+                status={status}
+                onClick={() => {
+                    switch (status) {
+                        case 'idle':
+                            setStatus('ticking');
+                            break;
+                        case 'ticking':
+                            setStatus('idle');
+                            break;
+                        default:
+                            setStatus('idle');
+                            break;
+                    }
+                }}
+            />
+
+            {/* Button */}
+            <button
+                onClick={() => {
+                    setStatus('idle');
+                    setCurrentTimerIndex(0);
+                }}
+            >
+                reset
+            </button>
         </>
     );
 }
