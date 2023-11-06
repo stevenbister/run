@@ -2,6 +2,7 @@ import { useState } from 'react';
 import notification from '../assets/sounds/soft-tone-001-9755.mp3';
 import { Timer } from '../components/Timer';
 import type { TimerStatus, Workout as WorkoutType } from '../types';
+import { Button, ButtonGroup } from './Button';
 import { PlayPauseButton } from './PlayPauseButton';
 
 export interface WorkoutProps {
@@ -38,40 +39,45 @@ export function Workout(props: WorkoutProps) {
 
     return (
         <>
+            PROGRESS BAR HERE
             <Timer
                 status={status}
                 maxDuration={intervals[currentTimerIndex].duration}
                 onTimerEnd={handleTimerEnd}
             />
+            <div className="effort-section">
+                <h2 className="effort-section__ttl">effort</h2>
+                <h3 className="effort-section__sub-ttl">
+                    {intervals[currentTimerIndex].effort}
+                </h3>
+            </div>
+            <ButtonGroup direction="vertical">
+                <PlayPauseButton
+                    status={status}
+                    onClick={() => {
+                        switch (status) {
+                            case 'idle':
+                                setStatus('ticking');
+                                break;
+                            case 'ticking':
+                                setStatus('idle');
+                                break;
+                            default:
+                                setStatus('idle');
+                                break;
+                        }
+                    }}
+                />
 
-            <div>{intervals[currentTimerIndex].effort}</div>
-
-            <PlayPauseButton
-                status={status}
-                onClick={() => {
-                    switch (status) {
-                        case 'idle':
-                            setStatus('ticking');
-                            break;
-                        case 'ticking':
-                            setStatus('idle');
-                            break;
-                        default:
-                            setStatus('idle');
-                            break;
-                    }
-                }}
-            />
-
-            {/* Button */}
-            <button
-                onClick={() => {
-                    setStatus('idle');
-                    setCurrentTimerIndex(0);
-                }}
-            >
-                reset
-            </button>
+                <Button
+                    onClick={() => {
+                        setStatus('idle');
+                        setCurrentTimerIndex(0);
+                    }}
+                >
+                    reset
+                </Button>
+            </ButtonGroup>
         </>
     );
 }
